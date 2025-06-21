@@ -7,10 +7,10 @@ import PlayerContextProvider from './context/PlayerContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/GREY-MUSIC-PLAYER">
-   <PlayerContextProvider>
+    <BrowserRouter>
+
      <App />
-   </PlayerContextProvider>
+ 
    </BrowserRouter>
     
 
