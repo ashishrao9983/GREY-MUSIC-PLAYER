@@ -6,7 +6,7 @@ import {BrowserRouter} from 'react-router-dom'
 import PlayerContextProvider from './context/PlayerContext.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <React.StrictMode>
     <BrowserRouter>
 
      <App />
@@ -14,5 +14,5 @@ createRoot(document.getElementById('root')).render(
    </BrowserRouter>
     
 
-  </StrictMode>,
-)
+  </React.StrictMode>,
+);
