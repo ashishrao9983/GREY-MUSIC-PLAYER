@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar'
 import Player from './components/Player'
 import Display from './components/Display'
 import { PlayerContext } from './context/PlayerContext'
+import Search from './components/DisplaySearch'
 
 const App = () => {
 
