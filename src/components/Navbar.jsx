@@ -2,11 +2,21 @@ import React from 'react'
 import {assets} from '../assets/assets'
 import { useState } from 'react'
 import ProfileLog from './ProfileLog'
+import { useNavigate } from 'react-router-dom'
+import MusicBar from './MusicBar'
+import DisplayHome from './DisplayHome'
 
 
 const Navbar = () => {
-
+  
+  
+  const [showMusic, setShowMusic] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
+  const navigate = useNavigate();
+
+  if (showMusic) {
+    return <MusicBar goBack={() => setShowMusic(false)} />;
+  }
 
   if (showProfile) {
     return <ProfileLog goBack={() => setShowProfile(false)} />;
@@ -28,10 +38,16 @@ const Navbar = () => {
     </div>
 
     <div className='flex items-center gap-2 mt-4'>
-        <p className='bg-white text-black px-4 py-1 rounded-2xl cursor-pointer'>All</p>
-        <p className='bg-black px-4 py-1 rounded-2xl cursor-pointer'>Music</p>
-          <p className='bg-black px-4 py-1 rounded-2xl cursor-pointer'>Podcasts</p>
+      <p className='bg-black px-4 py-1 rounded-2xl cursor-pointer hover:bg-green-500'>All</p>
+        <p 
+          onClick={() => setShowMusic(true)} 
+          className='bg-black px-4 py-1 rounded-2xl cursor-pointer hover:bg-green-500'
+        >
+          Music
+        </p>
+        <p className='bg-black px-4 py-1 rounded-2xl cursor-pointer hover:bg-green-500'>Podcasts</p>
     </div>
+    
    </>
   )
 }
